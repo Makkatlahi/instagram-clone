@@ -1,0 +1,90 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to left,
+    rgb(254, 218, 117),
+    rgb(250, 126, 30),
+    rgb(214, 41, 118),
+    rgb(150, 47, 191),
+    rgb(79, 91, 213)
+  );
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: 375px;
+  height: 545px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 0.5px solid black;
+  box-shadow: 0 0 20px black;
+}
+
+.header {
+  border-bottom: 1px solid rgba(198, 198, 198, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.oldagram-img {
+  width: 127px;
+}
+
+.user-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.main {
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: 10px 10px 17px 11px; */
+  gap: 0.4375rem;
+  width: 100%;
+}
+
+.profile-info__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.profile-info {
+}
+
+.profile-info__name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.profile-info__location {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
