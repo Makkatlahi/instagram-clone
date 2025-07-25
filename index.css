@@ -29,13 +29,25 @@ img {
   object-fit: cover;
 }
 
+button {
+  border-radius: 0;
+  text-align: inherit;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  font: inherit;
+}
+
 .container {
   width: 375px;
   height: 612px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 1);
   border: 0.5px solid black;
   box-shadow: 0 0 20px black;
 }
@@ -100,9 +112,18 @@ img {
 
 .post__respond--like {
 }
+
+#heartIcon,
+#commentIcon,
+#messageIcon {
+  width: 23.3px;
+  height: 22.13px;
+}
+
 .post__respond--comment {
 }
-.post__respond--share {
+
+.post__respond--dm {
 }
 
 .post__feedback {
@@ -110,6 +131,10 @@ img {
 }
 
 .post__feedback--likes {
+}
+
+.post__feedback--comments {
+  margin-top: 12px;
 }
 
 .embolden {
