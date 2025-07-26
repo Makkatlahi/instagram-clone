@@ -35,7 +35,10 @@ const posts = [
 function handleLike(event) {
   // Since the original html articles were cleared out, we have to
   // listen for the event on the parent element
-  if (event.target.closest(".post__respond--like")) {
+  if (
+    event.target.closest(".post__img") ||
+    event.target.closest(".post__respond--like")
+  ) {
     console.log("double clicked!");
     const likesSpan = event.target.closest(".post").querySelector(".numLikes");
     likesSpan.textContent = parseInt(likesSpan.textContent) + 1;
