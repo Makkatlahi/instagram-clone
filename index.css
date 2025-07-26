@@ -11,9 +11,6 @@ body {
   font-size: 16px;
   height: 100%;
   width: 100%;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   background: linear-gradient(
     to top,
     rgb(254, 218, 117),
@@ -65,10 +62,6 @@ p {
   padding: 0 15px;
   height: 67px;
   width: 100%;
-}
-
-.articles {
-  margin-bottom: 1rem;
 }
 
 .container {
@@ -131,33 +124,27 @@ p {
   margin-left: 10px;
 }
 
-.post__respond--like {
-}
-
-#heartIcon,
-#heartIconLiked,
-#commentIcon,
-#messageIcon {
+.post__respond--like,
+.post__respond--liked,
+.post__respond--comment,
+.post__respond--dm {
   width: 23.3px;
   height: 22.13px;
   cursor: pointer;
 }
-
-#heartIcon:hover,
-#heartIcon:focus,
-#heartIconLiked:hover,
-#heartIconLiked:focus,
-#commentIcon:hover,
-#commentIcon:focus,
-#messageIcon:hover,
-#messageIcon:focus {
+.post__respond--like:hover,
+.post__respond--like:focus,
+.post__respond--liked:hover,
+.post__respond--liked:focus,
+.post__respond--comment:hover,
+.post__respond--comment:focus,
+.post__respond--dm:hover,
+.post__respond--dm:focus {
   opacity: 0.5;
 }
 
-.post__respond--comment {
-}
-
-.post__respond--dm {
+.post__respond--liked-img {
+  height: 100%;
 }
 
 .post__feedback {

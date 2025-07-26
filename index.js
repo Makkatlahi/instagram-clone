@@ -1,6 +1,4 @@
-// const likeButtonEl = document.querySelector(".post__respond--like");
-const likeButtonEl = document.getElementById("heartIcon");
-const numLikesEl = document.querySelector("#numLikes");
+const likeButtonEl = document.querySelector(".post__respond--like");
 const articlesEl = document.querySelector(".articles");
 
 const posts = [
@@ -34,6 +32,29 @@ const posts = [
   },
 ];
 
+function handleLike(event) {
+  // Since the original html articles were cleared out, we have to
+  // listen for the event on the parent element
+  if (event.target.closest(".post__respond--like")) {
+    console.log("double clicked!");
+    const likesSpan = event.target.closest(".post").querySelector(".numLikes");
+    likesSpan.textContent = parseInt(likesSpan.textContent) + 1;
+
+    // swap out the heart outline for a filled-in heart
+    const heartEl = event.target
+      .closest(".post")
+      .querySelector(".post__respond--like-img");
+    heartEl.classList.add("hidden");
+    const filledHeartEl = event.target
+      .closest(".post")
+      .querySelector(".post__respond--liked-img");
+    filledHeartEl.classList.remove("hidden");
+  }
+}
+
+//listen for the event on the parent element
+articlesEl.addEventListener("dblclick", handleLike);
+
 function renderPost() {
   articlesEl.innerHTML = "";
   let articles = "";
@@ -61,27 +82,25 @@ function renderPost() {
               <button class="post__respond--like">
                 <img
                   class="post__respond--like-img"
-                  id="heartIcon"
                   src="./images/icon-heart.png"
                   alt="heart outline."
                 />
                 <img
-                  class="hidden"
-                  id="heartIconLiked"
+                  class="post__respond--liked-img hidden"
                   src="./images/heartIcon.png"
                   alt="heart outline."
                 />
               </button>
               <button class="post__respond--comment">
                 <img
-                  id="commentIcon"
+                  class="post__respond--comment-img"
                   src="./images/icon-comment.png"
                   alt="Comment icon."
                 />
               </button>
               <button class="post__respond--dm">
                 <img
-                  id="messageIcon"
+                  class="post__respond--dm-img"
                   src="./images/icon-dm.png"
                   alt="Direct Message"
                 />
@@ -89,7 +108,7 @@ function renderPost() {
             </div>
             <div class="post__feedback">
               <p class="post__feedback--likes embolden">
-                <span id="numLikes">${posts[i].likes}</span> likes
+                <span class="numLikes">${posts[i].likes}</span> likes
               </p>
               <p class="post__feedback--comments">
                 <span class="embolden">${posts[i].username}</span> ${posts[i].comment}
